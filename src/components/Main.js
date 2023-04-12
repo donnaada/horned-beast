@@ -9,7 +9,7 @@ class Main extends Component {
   render() {
     return (
       <>
-        <Container>
+        <Container className='my-5'>
           <Row className='g-4'>
             {beasts.map(beast => {
               return (
@@ -21,8 +21,6 @@ class Main extends Component {
             }
           </Row>
         </Container>
-
-
       </>
     )
   }

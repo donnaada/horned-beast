@@ -6,11 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
       <Main title="Horned Beast 1" />
       <Footer />
-    </div>
+    </>
   );
 }
 
