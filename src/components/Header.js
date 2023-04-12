@@ -1,10 +1,16 @@
-import { Component} from "react";
+import { Component } from "react";
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 
 class Header extends Component {
-  render(){
+  render() {
     return (
       <>
-        <h1>Horned Beast</h1>
+        <Navbar bg="primary" variant="dark">
+          <Container>
+            <Navbar.Brand><h1>Horned Beasts</h1></Navbar.Brand>
+          </Container>
+        </Navbar>
       </>
     );
   }
