@@ -10,10 +10,10 @@ class Main extends Component {
     return (
       <>
         <Container>
-          <Row>
+          <Row className='g-4'>
             {beasts.map(beast => {
               return (
-                <Col xs={6} md={4}>
+                <Col xs={12} md={6} lg={4}>
                   <HornedBeast key={beast._id} title={beast.title} imageUrl={beast.image_url} description={beast.description} />
                 </Col>
               )

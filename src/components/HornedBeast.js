@@ -1,18 +1,22 @@
 import { Component } from "react";
-import Image from 'react-bootstrap/Image';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
 import { HeartFill } from 'react-bootstrap-icons';
 
 class HornedBeast extends Component {
   render() {
     return (
-      <>
-        <h2>{this.props.title}</h2>
-        <Image src={this.props.imageUrl} alt={this.props.description} title={this.props.title} fluid rounded></Image>
-        <FavoritedImage />
 
-
-      </>
+      <CardGroup>
+        <Card className="">
+          <Card.Img variant="top" src={this.props.imageUrl} alt={this.props.description} />
+          <Card.Body className="">
+            <Card.Title>{this.props.title}</Card.Title>
+          </Card.Body>
+          <FavoritedImage />
+        </Card>
+      </CardGroup>
     )
   }
 }
@@ -36,7 +40,9 @@ class FavoritedImage extends Component {
 
   render() {
     return (
-      <Button onClick={this.handleClick}><HeartFill></HeartFill> <span>{this.state.timesClicked}</span></Button>
+      <div className="d-grid">
+        <Button onClick={this.handleClick} size="sm" ><HeartFill></HeartFill> <span>{this.state.timesClicked}</span></Button>
+      </div>
     )
   }
 
