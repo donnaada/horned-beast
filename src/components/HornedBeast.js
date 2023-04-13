@@ -19,10 +19,6 @@ class HornedBeast extends Component {
 
   }
 
-  // handleImageClick = () => {
-  //   this.props.onImageClick();
-  // }
-
   render() {
     return (
 
@@ -44,7 +40,7 @@ class HornedBeast extends Component {
           onClick={this.props.onImageClick} />
 
         <Card.Body className="bg-secondary">
-          <Button className="btn btn-dark">
+          <Button className="btn btn-dark" onClick={this.handleClick}>
             <HeartFill color="red" title=""></HeartFill>
             <span> {this.state.timesClicked}</span>
           </Button>
