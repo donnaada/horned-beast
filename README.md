@@ -61,7 +61,7 @@ Estimate of time needed to complete: 3.5hrs
 
 Start time: 1030a
 
-Finish time: 
+Finish time: 10pm
 
-Actual time needed to complete: 4hrs and 45minutes
+Actual time needed to complete: 5 hrs of actual time spent on project
 ```
