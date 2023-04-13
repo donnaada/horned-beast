@@ -32,7 +32,9 @@ class HornedBeast extends Component {
         <Card.Img
           src={this.props.imageUrl}
           alt={this.props.description}
-          title={this.props.title} fluid rounded
+          title={this.props.title}
+          fluid
+          rounded
           style={{
             objectFit: 'contain',
             height: 300,

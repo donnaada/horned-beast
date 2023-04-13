@@ -36,7 +36,7 @@ class App extends Component {
       <>
         <Header />
         <Main beasts={beastsList} onImageClick={this.handleModalOpen} />
-        <SelectedBeast show={this.state.openModal} onClose={this.handleModalClose} selectedBeast={this.state.selectedBeast} />
+        <SelectedBeast show={this.state.showModal} onClose={this.handleModalClose} selectedBeast={this.state.selectedBeast} />
         <Footer />
       </>
     );

@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
 
 class SelectedBeast extends Component {
     constructor(props) {
@@ -13,11 +14,11 @@ class SelectedBeast extends Component {
         return (
             <Modal show={this.props.show} onHide={this.props.onClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Title</Modal.Title>
+                    <Modal.Title>{this.props.selectedBeast.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img src='' alt='' style={{ width: '100%' }} />
-                    <p>Paragraph</p>
+                    <Image src={this.props.selectedBeast.image_url} alt={this.props.selectedBeast.description} fluid />
+                    <p>{this.props.selectedBeast.description}</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={this.props.onClose}>Close</Button>
