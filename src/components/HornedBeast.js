@@ -19,19 +19,27 @@ class HornedBeast extends Component {
 
   }
 
+  // handleImageClick = () => {
+  //   this.props.onImageClick();
+  // }
+
   render() {
     return (
 
-      <Card className="bg-secondary text-white" onClick={this.handleClick}>
+      <Card className="bg-secondary text-white">
         <Card.Title>{this.props.title}</Card.Title>
 
-        <Card.Img src={this.props.imageUrl} alt={this.props.description} title={this.props.title} fluid rounded style={{
-          objectFit: 'contain',
-          height: 300,
-          width: '100%',
-          padding: '10px 0'
-
-        }} />
+        <Card.Img
+          src={this.props.imageUrl}
+          alt={this.props.description}
+          title={this.props.title} fluid rounded
+          style={{
+            objectFit: 'contain',
+            height: 300,
+            width: '100%',
+            padding: '10px 0'
+          }}
+          onClick={this.props.onImageClick} />
 
         <Card.Body className="bg-secondary">
           <Button className="btn btn-dark">
