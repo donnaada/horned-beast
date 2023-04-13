@@ -5,12 +5,20 @@ import Row from 'react-bootstrap/Row';
 import HornedBeast from './HornedBeast';
 
 class Main extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      beasts: this.props.beasts,
+    };
+}
+
   render() {
     return (
       <>
         <Container className='my-5'>
           <Row className='g-4'>
-            {this.props.beasts.map(beast => {
+            {this.state.beasts.map(beast => {
               return (
                 <Col xs={12} md={6} lg={4}>
                   <HornedBeast
@@ -19,6 +27,7 @@ class Main extends Component {
                     imageUrl={beast.image_url}
                     description={beast.description}
                     onImageClick={this.props.onImageClick}
+                    getSelectedMethod={this.props.getSelectedMethod}
                   />
                 </Col>
               )
