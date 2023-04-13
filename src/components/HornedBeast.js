@@ -37,7 +37,12 @@ class HornedBeast extends Component {
             width: '100%',
             padding: '10px 0'
           }}
-          onClick={this.props.onImageClick} />
+          onClick={() => this.props.getSelectedMethod(
+            this.props.title, 
+            this.props.imageUrl, 
+            this.props.description
+          )}  
+        />
 
         <Card.Body className="bg-secondary">
           <Button className="btn btn-dark" onClick={this.handleClick}>

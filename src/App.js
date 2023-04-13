@@ -13,30 +13,46 @@ class App extends Component {
     super(props);
     this.state = {
       showModal: false,
-      selectedBeast: {},
+      title: '',
+      src: '',
+      description: ''
     };
   }
 
   handleModalOpen = (beast) => {
     this.setState({
       showModal: true,
-      selectedBeast: beast,
+      // selectedBeast: beast,
     })
   }
   handleModalClose = () => {
     this.setState({
       showModal: false,
-      selectedBeast: {},
+      // selectedBeast: {},
 
     })
   }
+
+  getSelectedMethod = (title, src, description) => {
+    this.setState({
+      title: title,
+      src: src,
+      description: description,
+    }); 
+    this.handleModalOpen();
+  };
 
   render() {
     return (
       <>
         <Header />
-        <Main beasts={beastsList} onImageClick={this.handleModalOpen} />
-        <SelectedBeast show={this.state.showModal} onClose={this.handleModalClose} selectedBeast={this.state.selectedBeast} />
+        <Main beasts={beastsList} onImageClick={this.handleModalOpen} getSelectedMethod={this.getSelectedMethod}/>
+        <SelectedBeast 
+          show={this.state.showModal} 
+          onClose={this.handleModalClose}
+          title={this.state.title}
+          src={this.state.src}
+          description={this.state.description} />
         <Footer />
       </>
     );
