@@ -15,7 +15,8 @@ class App extends Component {
       showModal: false,
       title: '',
       src: '',
-      description: ''
+      description: '',
+      filterHorns: beastsList,
     };
   }
 
@@ -33,26 +34,67 @@ class App extends Component {
     })
   }
 
+  handleFilter = (event) => {
+    const filter = event.target.value;
+
+    let filteredBeast;
+
+    switch (filter) {
+      case 'all':
+        filteredBeast = beastsList;
+        break;
+      case '1':
+        filteredBeast = beastsList.filter(beast => beast.horns === 1);
+        break;
+      case '2':
+        filteredBeast = beastsList.filter(beast => beast.horns === 2);
+        break;
+      case '3':
+        filteredBeast = beastsList.filter(beast => beast.horns === 3);
+        break;
+      case '100':
+        filteredBeast = beastsList.filter(beast => beast.horns === 100);
+
+        break;
+      default:
+        filteredBeast = beastsList;
+    }
+
+    this.setState({
+      filterHorns: filteredBeast,
+    })
+
+
+  };
+
   getSelectedMethod = (title, src, description) => {
+    this.handleModalOpen();
     this.setState({
       title: title,
       src: src,
       description: description,
-    }); 
-    this.handleModalOpen();
+    });
   };
 
   render() {
     return (
       <>
         <Header />
-        <Main beasts={beastsList} onImageClick={this.handleModalOpen} getSelectedMethod={this.getSelectedMethod}/>
-        <SelectedBeast 
-          show={this.state.showModal} 
+        <Main
+          beasts={this.state.filterHorns}
+          onImageClick={this.handleModalOpen}
+          getSelectedMethod={this.getSelectedMethod}
+          handleFilter={this.handleFilter}
+        />
+
+        <SelectedBeast
+          show={this.state.showModal}
           onClose={this.handleModalClose}
           title={this.state.title}
           src={this.state.src}
-          description={this.state.description} />
+          description={this.state.description}
+        />
+
         <Footer />
       </>
     );

@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import HornedBeast from './HornedBeast';
+import BeastForm from './BeastForm';
+
 
 class Main extends Component {
 
@@ -11,14 +13,15 @@ class Main extends Component {
     this.state = {
       beasts: this.props.beasts,
     };
-}
+  }
 
   render() {
     return (
       <>
-        <Container className='my-5'>
-          <Row className='g-4'>
-            {this.state.beasts.map(beast => {
+        <Container className='my-3'>
+          <BeastForm onFilter={this.props.handleFilter} />
+          <Row className='g-4 my-5'>
+            {this.props.beasts.map(beast => {
               return (
                 <Col xs={12} md={6} lg={4}>
                   <HornedBeast
@@ -31,13 +34,13 @@ class Main extends Component {
                   />
                 </Col>
               )
-            })
-            }
+            })}
           </Row>
         </Container>
       </>
     )
   }
+
 }
 
 
