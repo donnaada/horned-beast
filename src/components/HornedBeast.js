@@ -22,8 +22,8 @@ class HornedBeast extends Component {
   render() {
     return (
 
-      <Card className="bg-secondary text-white">
-        <Card.Title>{this.props.title}</Card.Title>
+      <Card border="secondary" className="p-3">
+        <Card.Title className="text-center"><h3>{this.props.title}</h3></Card.Title>
 
         <Card.Img
           src={this.props.imageUrl}
@@ -32,25 +32,25 @@ class HornedBeast extends Component {
           fluid
           rounded
           style={{
-            objectFit: 'contain',
+            objectFit: 'cover',
             height: 300,
             width: '100%',
-            padding: '10px 0'
+            padding: '10px'
           }}
           onClick={() => this.props.getSelectedMethod(
-            this.props.title, 
-            this.props.imageUrl, 
+            this.props.title,
+            this.props.imageUrl,
             this.props.description
-          )}  
+          )}
         />
 
-        <Card.Body className="bg-secondary">
-          <Button className="btn btn-dark" onClick={this.handleClick}>
-            <HeartFill color="red" title=""></HeartFill>
+        <Card.Body className="d-grid gap-2">
+          <Button variant="danger" onClick={this.handleClick}>
+            <HeartFill color="white" hoverColor title=""></HeartFill>
             <span> {this.state.timesClicked}</span>
           </Button>
         </Card.Body>
-      </Card>
+      </Card >
 
     )
   }
