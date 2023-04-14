@@ -65,3 +65,18 @@ Finish time: 10pm
 
 Actual time needed to complete: 5 hrs of actual time spent on project
 ```
+
+### Feature 5
+
+``` markdown
+Number and name of feature: Lab 4 Feature 1. Filter by Numbers of Horns
+
+Estimate of time needed to complete: 3.5hrs
+
+Start time: 1100a
+
+Finish time: 4pm
+
+Actual time needed to complete: 3 hrs of actual time spent on project
+```
+
